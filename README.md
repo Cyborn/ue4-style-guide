@@ -1,8 +1,5 @@
-# [Cyborn](https://www.cyborn.be) UE4 Style Guide
-
-*A mostly reasonable approach to Unreal Engine 4*
-
-Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
+# [Cyborn](https://www.cyborn.be) UE4 Style Guide 
+*A mostly reasonable approach to Unreal Engine 4.* - Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
 
 <a name="toc"></a>
 ## Table of Contents
@@ -20,11 +17,15 @@ Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbn
 <a name="0"></a>
 ## 0. Introduction
 
+<a name="linking"></a>
+<a name="0.1"></a>
 ### 0.1 Linking To This Document
 
-Every section of this style guide is numbered for both easy reference and easy linking. You can link to any section directly by simply append a hash tag and the section number to the end of http://ue4.style
-For example, if you want to send someone to the first principle of this style guide you would append `#0.1`, resulting in http://ue4.style#0.1.
+Every section of this style guide is numbered for both easy reference and easy linking. You can link to any section directly by simply append a hash tag and the section number to the end of https://github.com/Cyborn/ue4-style-guide.
+For example, if you want to send someone to the first principle of this style guide you would append `#0.1`, resulting in https://github.com/Cyborn/ue4-style-guide#0.1.
 
+<a name="terminology"></a>
+<a name="0.2"></a>
 ### 0.2 Important Terminology
 
 <a name="terms-level-map"></a>
@@ -86,6 +87,7 @@ For unique but generic variations of assets, `Variant` is a two digit number sta
 Depending on how your asset variants are made, you can chain together variant names. For example, if you are creating flooring assets for an Arch Viz project you should use the base name `Flooring` with chained variants such as `Flooring_Marble_01`, `Flooring_Maple_01`, `Flooring_Tile_Squares_01`.
 
 <a name="1.1-examples"></a>
+<a name="1.1"></a>
 #### 1.1 Examples
 
 ##### 1.1e1 Bob
