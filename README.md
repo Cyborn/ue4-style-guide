@@ -4,12 +4,28 @@
 
 Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
 
-## Linking To This Document
+<a name="toc"></a>
+## Table of Contents
+
+> 0. [Introduction](#intro)
+> 0. [Asset Naming Conventions](#anc)
+> 0. [Directory Structure](#structure)
+> 0. [Blueprints](#bp)
+> 0. [Static Meshes](#s)
+> 0. [Particle Systems](#ps)
+> 0. [Levels / Maps](#levels)
+> 0. [Textures](#textures)
+
+<a name="intro"></a>
+<a name="0"></a>
+## 0. Introduction
+
+### 0.1 Linking To This Document
 
 Every section of this style guide is numbered for both easy reference and easy linking. You can link to any section directly by simply append a hash tag and the section number to the end of http://ue4.style
 For example, if you want to send someone to the first principle of this style guide you would append `#0.1`, resulting in http://ue4.style#0.1.
 
-## Important Terminology
+### 0.2 Important Terminology
 
 <a name="terms-level-map"></a>
 ##### Levels/Maps
@@ -19,7 +35,7 @@ The word 'map' generally refers to what the average person calls a 'level' and m
 <a name="terms-cases"></a>
 ##### Casing type
 
-There are a few different ways you can name things. We always use PascalCase
+There are a few different ways you can name things. We always use PascalCase.
 
 > ###### PascalCase
 >
@@ -42,17 +58,6 @@ When in the context of a class, often used to imply accessing previously defined
 Usually refers to a variable defined as a function argument or a local variable inside a function.
 
 When in the context of a class, often used to convey discussion about its definition and what it will hold.
-
-<a name="toc"></a>
-## Table of Contents
-
-> 1. [Asset Naming Conventions](#anc)
-> 1. [Directory Structure](#structure)
-> 1. [Blueprints](#bp)
-> 1. [Static Meshes](#s)
-> 1. [Particle Systems](#ps)
-> 1. [Levels / Maps](#levels)
-> 1. [Textures](#textures)
 
 <a name="anc"></a>
 <a name="1"></a>
