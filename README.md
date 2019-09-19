@@ -1,4 +1,4 @@
-# [Cyborn](https://www.cyborn.be) UE4 Style Guide() {
+# [Cyborn](https://www.cyborn.be) UE4 Style Guide
 
 *A mostly reasonable approach to Unreal Engine 4*
 
@@ -17,21 +17,14 @@ For example, if you want to send someone to the first principle of this style gu
 The word 'map' generally refers to what the average person calls a 'level' and may be used interchangeably. See this term's history [here](https://en.wikipedia.org/wiki/Level_(video_gaming)).
 
 <a name="terms-cases"></a>
-##### Cases
+##### Casing type
 
-There are a few different ways you can name things. Here are some common casing types:
+There are a few different ways you can name things. We always use PascalCase
 
 > ###### PascalCase
 >
 > Capitalize every word and remove all spaces, e.g. `DesertEagle`, `StyleGuide`, `ASeriesOfWords`.
-> 
-> ###### camelCase
 >
-> The first letter is always lowercase but every following word starts with uppercase, e.g. `desertEagle`, `styleGuide`, `aSeriesOfWords`.
->
-> ###### Snake_case
->
-> Words can arbitrarily start upper or lowercase but words are separated by an underscore, e.g. `desert_Eagle`, `Style_Guide`, `a_Series_of_Words`.
 
 <a name="terms-var-prop"></a>
 ##### Variables / Properties
