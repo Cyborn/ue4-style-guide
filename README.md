@@ -12,6 +12,7 @@
 > 0. [Particle Systems](#ps)
 > 0. [Levels / Maps](#levels)
 > 0. [Textures](#textures)
+> 0. [Code Convention](#codeconv)
 
 <a name="intro"></a>
 <a name="0"></a>
@@ -1325,6 +1326,51 @@ Every texture has a Texture Group property used for LODing, and this should be s
 
 **[⬆ Back to Top](#table-of-contents)**
 
+<a name="8"></a>
+<a name="codeconv"></a>
+## 8. Code Convention ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+This section will focus on Code convention not covered in the official UE4 C++ guideline. (https://docs.unrealengine.com/en-US/Programming/Development/CodingStandard/index.html)
+
+### Sections
+
+> 8.1 [Future Features in code marking](#futurefeature)
+
+> 8.2 [Variable passing in function declarations](#varpassing)
+
+<a name="8.1"></a>
+<a name="futurefeature"></a>
+### 8.1 Future Features in code marking [#](https://img.shields.io/badge/lint-unsupported-red.
+
+When you are creating a temporary solution for code that is not ported to C++ yet or if you know something will have to change later on you add a comment tag on it like this:
+
+```
+// TODO: replace later with this blibloe (https://cyborn.atlassian.net/browse/HUB-212)
+```
+
+This way we can easily identify at two points if we still got refactoring work to go in both the VS project as in our project management dashboard.
+
+<a name="8.2"></a>
+<a name="varpassing"></a>
+### 8.2 Variable passing in function declarations [#](https://img.shields.io/badge/lint-unsupported-red.
+
+Function declarations that take variables in are to define these variables with cammel case naming to avoid variable hiding.
+
+Good:
+```
+void HubrisClass::HubrisFunction(int thisIsVarA,int thisIsVarB)
+{
+
+}
+```
+
+Bad:
+```
+void HubrisClass::HubrisFunction(int ThisIsVarA,int ThisIsVarB)
+{
+
+}
+```
 
 ## Contributors
 
