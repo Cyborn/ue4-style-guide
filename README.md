@@ -1340,7 +1340,7 @@ This section will focus on Code convention not covered in the official UE4 C++ g
 
 <a name="8.1"></a>
 <a name="futurefeature"></a>
-### 8.1 Future Features in code marking [#](https://img.shields.io/badge/lint-unsupported-red.
+### 8.1 Future Features in code marking ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 When you are creating a temporary solution for code that is not ported to C++ yet or if you know something will have to change later on you add a comment tag on it like this:
 
@@ -1352,21 +1352,24 @@ This way we can easily identify at two points if we still got refactoring work t
 
 <a name="8.2"></a>
 <a name="varpassing"></a>
-### 8.2 Variable passing in function declarations [#](https://img.shields.io/badge/lint-unsupported-red.
+### 8.2 Variable passing in function declarations ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 Function declarations that take variables in are to define these variables with cammel case naming to avoid variable hiding.
+For boolean parameters, ```bool bIsABool``` becomes ```bool isABool```.
+
+__This rule also applies for inherited functions.__
 
 Good:
-```
-void HubrisClass::HubrisFunction(int thisIsVarA,int thisIsVarB)
+```cpp
+void HubrisClass::HubrisFunction(int thisIsVarA, int thisIsVarB, bool isThisAFunction)
 {
 
 }
 ```
 
 Bad:
-```
-void HubrisClass::HubrisFunction(int ThisIsVarA,int ThisIsVarB)
+```cpp
+void HubrisClass::HubrisFunction(int ThisIsVarA, int ThisIsVarB, bool bIsThisAFunction)
 {
 
 }
