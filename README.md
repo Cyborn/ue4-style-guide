@@ -97,9 +97,9 @@ Depending on how your asset variants are made, you can chain together variant na
 | ----------------------- | ---------------------------------------------------------- |
 | Skeletal Mesh           | SK_Bob                                                     |
 | Material                | M_Bob                                                      |
-| Texture (Diffuse/Albedo)| T_Bob_D                                                    |
-| Texture (Normal)        | T_Bob_N                                                    |
-| Texture (Evil Diffuse)  | T_Bob_Evil_D                                               |
+| Texture (Diffuse/Albedo)| T_Bob_BaseColor                                            |
+| Texture (Normal)        | T_Bob_Normal                                               |
+| Texture (Evil Diffuse)  | T_Bob_Evil_BaseColor                                       |
 
 ##### 1.1e2 Rocks
 
