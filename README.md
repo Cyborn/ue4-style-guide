@@ -237,17 +237,17 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Texture                 | T_         |            |                                  |
-| Texture (Diffuse/Albedo/Base Color)| T_ | _D      |                                  |
-| Texture (Normal)        | T_         | _N         |                                  |
-| Texture (Roughness)     | T_         | _R         |                                  |
-| Texture (Alpha/Opacity) | T_         | _A         |                                  |
-| Texture (Ambient Occlusion) | T_     | _O         |                                  |
-| Texture (Bump)          | T_         | _B         |                                  |
-| Texture (Emissive)      | T_         | _E         |                                  |
-| Texture (Mask)          | T_         | _M         |                                  |
-| Texture (Specular)      | T_         | _S         |                                  |
-| Texture (Metallic)      | T_         | _M         |                                  |
-| Texture (Packed)        | T_         | _*         | See notes below about [packing](#anc-textures-packing). |
+| Texture (Diffuse/Albedo/Base Color)| T_ | _BaseColor      |                                  |
+| Texture (Normal)        | T_         | _Normal         |                                  |
+| Texture (Roughness)     | T_         | _Roughness        |                                  |
+| Texture (Alpha/Opacity) | T_         | _Opacity         |                                  |
+| Texture (Ambient Occlusion) | T_     | _Occlusion         |                                  |
+| Texture (Bump)          | T_         | _Height         |                                  |
+| Texture (Emissive)      | T_         | _Emissive         |                                  |
+| Texture (Mask)          | T_         | _Mask        |                                  |
+| Texture (Specular)      | T_         | _Specular         |                                  |
+| Texture (Metallic)      | T_         | _Metallic        |                                  |
+| Texture (Packed)        | T_         |E.G: _OcclusionRoughnessMetallic         | See notes below about [packing](#anc-textures-packing). |
 | Texture Cube            | TC_        |            |                                  |
 | Media Texture           | MT_        |            |                                  |
 | Render Target           | RT_        |            |                                  |
