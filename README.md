@@ -367,9 +367,8 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 <a name="2e1"><a>
 ### 2e1 Example Project Content Structure
 <pre>
-|-- Content
-    |-- <a href="#2.2">GenericShooter</a>
-        |-- Meshes
+   |-- <a href="#2.2">Content</a>
+      |-- Meshes
         |   |-- Characters
         |   |-- Env
 	|   |-- Props
