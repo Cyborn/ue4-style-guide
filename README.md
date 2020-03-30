@@ -1218,31 +1218,6 @@ It is normal during development for levels to occasionaly not have lighting buil
 
 Levels should not have any [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) in all areas visible to the player. 
 
-<a name="6.4"></a>
-<a name="levels-mp-rules"></a>
-### 6.4 Marketplace Specific Rules ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
-
-If a project is to be sold on the UE4 Marketplace, it must follow these rules.
-
-<a name="6.4.1"></a>
-<a name="levels-mp-rules-overview"></a>
-### 6.4.1 Overview Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
-
-If your project contains assets that should be visualized or demoed, you must have a map within your project that contains the name "Overview".
-
-This overview map, if it is visualizing assets, should be set up according to [Epic's guidelines](http://help.epicgames.com/customer/en/portal/articles/2592186-marketplace-submission-guidelines-preparing-your-assets#Required%20Levels%20and%20Maps).
-
-For example, `InteractionComponent_Overview`.
-
-<a name="6.4.2"></a>
-<a name="levels-mp-rules-demo"></a>
-### 6.4.2 Demo Level ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
-
-If your project contains assets that should be demoed or come with some sort of tutorial, you must have a map within your project that contains the name "Demo". This level should also contain documentation within it in some form that illustrates how to use your project. See Epic's Content Examples project for good examples on how to do this.
-
-If your project is a gameplay mechanic or other form of system as opposed to an art pack, this can be the same as your "Overview" map.
-
-For example, `InteractionComponent_Overview_Demo`, `ExplosionKit_Demo`.
 
 **[⬆ Back to Top](#table-of-contents)**
 
@@ -1267,7 +1242,7 @@ This section will focus on Texture assets and their internals.
 <a name="textures-dimensions"></a>
 ### 7.1 Dimensions Are Powers of 2 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All textures, except for UI textures, must have its dimensions in multiples of powers of 2. Textures do not have to be square.
+All textures, except for UI textures, must have its dimensions in multiples of powers of 2. Textures do not have to be square. UI textures should have mipmaps disabled if not a power of 2.
 
 For example, `128x512`, `1024x1024`, `2048x1024`, `1024x2048`, `1x512`.
 
@@ -1275,21 +1250,21 @@ For example, `128x512`, `1024x1024`, `2048x1024`, `1024x2048`, `1x512`.
 <a name="textures-density"></a>
 ### 7.2 Texture Density Should Be Uniform ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All textures should be of a size appropriate for their standard use case. Appropriate texture density varies from project to project, but all textures within that project should have a consistent density.
-
-For example, if a project's texture density is 8 pixel per 1 unit, a texture that is meant to be applied to a 100x100 unit cube should be 1024x1024, as that is the closest power of 2 that matches the project's texture density. 
+All textures should be of a size appropriate for their standard use case. Tiling materials should be mininum around 10px/cm.
+Props 5px/cm.
 
 <a name="7.3"></a>
 <a name="textures-max-size"></a>
 ### 7.3 Textures Should Be No Bigger than 8192 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-No texture should have a dimension that exceeds 8192 in size, unless you have a very explicit reason to do so. Often, using a texture this big is simply just a waste of resources.
+No texture should have a dimension that exceeds 4096 in size, unless you have a very explicit reason to do so. Often, using a texture this big is simply just a waste of resources.
 
 <a name="7.4"></a>
 <a name="textures-group"></a>
 ### 7.4 Textures Should Be Grouped Correctly ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-Every texture has a Texture Group property used for LODing, and this should be set correctly based on its use. For example, all UI textures should belong in the UI texture group.
+Every texture has a Texture Group property used for LODing, and this should be set correctly based on its use. For example, all UI textures should belong in the UI texture group. Normal maps should be set to WorldNormalMap/VehicleNormalMap/WeaponNormalMap.
+Packed textures (like OcclusionRoughnessMetallic) should use WorldSpecular. Effects for Effects, etc... check the list and adjust accordingly.
 
 **[⬆ Back to Top](#table-of-contents)**
 
