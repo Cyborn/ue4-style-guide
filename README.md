@@ -153,7 +153,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Level (Persistent)      |            | _P         |                                  |
 | Level (Audio)           |            | _Audio     |                                  |
 | Level (Lighting)        |            | _Lighting  |                                  |
-| Level (Geometry)        |            | _Geo       |                                  |
+| Level (Geometry)        |            | _SetDress  |                                  |
 | Level (Gameplay)        |            | _Gameplay  |                                  |
 | Blueprint               | BP_        |            |                                  |
 | Material                | M_         |            |                                  |
@@ -162,6 +162,8 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
 | Particle System         | PS_        |            |                                  |
 | Widget Blueprint        | WBP_       |            |                                  |
+| Niagara Emitter         | NE_        |            |                                  |
+| Niagara System          | NS_        |            |                                  |
 
 <a name="anc-animations"></a>
 <a name="1.2.2"></a>
@@ -221,11 +223,11 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 
 | Asset Type                    | Prefix     | Suffix     | Notes                            |
 | ----------------------------- | ---------- | ---------- | -------------------------------- |
-| Material                      | M_         |            |                                  |
-| Master Material               | MASTER_    |            |                                  |
+| Material                      | M_         |            |  Used for a single use asset     |
+| Material Instance             | MI_        |            |                                  |
+| Master Material               | MASTER_    |            | This is only used for very general shaders that are across multiple assets.                           |
 | Material (Post Process)       | PP_        |            |                                  |
 | Material Function             | MF_        |            |                                  |
-| Material Instance             | MI_        |            |                                  |
 | Material Parameter Collection | MPC_       |            |                                  |
 | Subsurface Profile            | SP_        |            |                                  |
 | Physical Materials            | PM_        |            |                                  |
@@ -350,6 +352,8 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Particle System         | PS_        |            |                                  |
 | Material (Post Process) | PP_        |            |                                  |
+| Niagara Emitter	  | NE_        |            |                                  |
+| Niagara System 	  | NS_        |            |                                  |
 
 **[⬆ Back to Top](#table-of-contents)**
 
