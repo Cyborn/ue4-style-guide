@@ -1280,6 +1280,8 @@ This section will focus on Code convention not covered in the official UE4 C++ g
 
 > 8.2 [Variable passing in function declarations](#varpassing)
 
+> 8.3 [Code documentation](#documentation)
+
 <a name="8.1"></a>
 <a name="futurefeature"></a>
 ### 8.1 Future Features in code marking ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
@@ -1305,7 +1307,7 @@ Good:
 ```cpp
 void HubrisClass::HubrisFunction(int thisIsVarA, int thisIsVarB, bool isThisAFunction)
 {
-
+	...
 }
 ```
 
@@ -1313,9 +1315,110 @@ Bad:
 ```cpp
 void HubrisClass::HubrisFunction(int ThisIsVarA, int ThisIsVarB, bool bIsThisAFunction)
 {
-
+	...
 }
 ```
+
+<a name="8.3"></a>
+<a name="documentation"></a>
+### 8.3 Code Documentation ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+
+<a name="8.3.1"></a>
+<a name="documentation-style"></a>
+#### 8.3.1 Comment style
+
+In **class, function or variable declarations**, multiline comments blocks should always follow the Javadoc comment style.<br/>
+Single line comments can use the Javadoc as well as C++ style
+```cpp
+/**
+ * This is a single line comment.
+ */
+void ExampleFunction();
+
+// This single line comment is also allowed.
+void ExampleFunction();
+
+/**
+ * This is a javadoc comment style block.
+ * It can contain as many lines as needed.
+ * See, three lines already!
+ */
+void ExampleFunction();
+```
+In **function definitions**, both single and multiline comments blocks should be C++ style comments.<br/>
+These comments should always give extra information that is not contained within the code itself.
+
+Good:
+```cpp
+TArray<int> MyClass::ExampleFunction(const TArray<int>& IntList)
+{
+	TArray<int> ValidInts;
+	
+	// Filter out invalid numbers in a prepass.
+	// This avoids duplicating this filter operation when processing the list multithreaded.
+	for (int Number : IntList)
+	{
+		if(MatchesRequirements(Number))
+		{
+			ValidInts.Add(Number);
+		}
+	}
+
+	return ValidInts;
+}
+```
+
+Bad: 
+```cpp
+TArray<int> MyClass::ExampleFunction(const TArray<int>& IntList)
+{
+	TArray<int> ValidInts;
+	
+	// We loop through all ints and store the relevant ones.
+	for (int Number : IntList)
+	{
+		if(MatchesRequirements(Number))
+		{
+			ValidInts.Add(Number);
+		}
+	}
+
+	// Return the new filtered array.
+	return ValidInts;
+}
+```
+
+<a name="8.3.2"></a>
+<a name="documentation-members"></a>
+#### 8.3.2 Class Members
+
+Accessible class members should always be properly documented.
+- Document every public class member (= both functions and variables).
+- Document every blueprint-accessible protected or private class member.
+
+<a name="8.3.3"></a>
+<a name="documentation-classdecl"></a>
+#### 8.3.3 Class declaration flags
+
+You can add tags to a class declaration, noting the state of a certain attribute of the class.
+Currently these tags are supported:
+
+**@SaveGame** _Ready | ToDo | None_<br/>
+**@Refactor** _Ready | ToDo_
+
+```cpp
+/**
+ * The main pawn for VR gameplay.
+ * Contains all input handling and main gameplay components for movement and scene interaction.
+ * This pawn should never directly reference any game objects that aren't persistent.
+ * @SaveGame Ready
+ * @Refactor Ready
+**/
+UCLASS(meta = (ShortTooltip = "The main pawn for VR gameplay. Contains all components necessary for world interaction."))
+class HUBRISVR_API ABaseVRPawn : public ABasePawn, public IEMSActorSaveInterface
+```
+
+Additionally, add **meta = (ShortTooltip = "")** to the **UCLASS** macro to add a short description to show in blueprints instead of the extended one.
 
 ## Contributors
 
