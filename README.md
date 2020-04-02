@@ -372,15 +372,97 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 ### 2e1 Example Project Content Structure
 <pre>
    |-- <a href="#2.2">Content</a>
-      |-- Meshes
+        |-- Art
+        |   |-- Industrial
+        |   |   |-- VionTech
+	|   |	|   |-- HG_Cables
+        |   |   |-- OOO 
+	|   |	|   |-- OOO_CryoPod
+        |   |   |-- Urom
+        |   |-- Nature
+        |   |   |-- Foliage
+        |   |   |-- Rocks
+        |   |-- Skyboxes
+	|   |-- Space
+	|   |-- Utility		 
+        |   |   |-- Blueprints   // Blueprint to help create art, spline deformers etc...
+        |   |   |-- ScaleRef	 //   
+        |-- Audio
+        |   |-- Ambient		// ambient background sounds
+        |   |-- Music		// music tracks
+        |   |-- Sounds		// sound that get triggered after an event
+        |   |-- Dialogues	// character audio files seperated per map
+        |   |   |-- Drone	
+	|   |	|   |-- Common  // reuseable dialogue across multiple maps
+	|   |	|   |-- WaterPond
+        |   |   |-- Lucia	
+	|   |	|   |-- Common
+	|   |	|   |-- WaterPond
+        |   |   |-- Tyrim	
+	|   |	|   |-- Common
+	|   |	|   |-- OOOShip				
+        |-- Characters
+        |   |-- Tyrim
+        |   |-- Common
+        |   |   |-- Animations  // shareable animations
+        |   |   |-- Audio	// specific sound for characters (walking, running)
+        |   |   |-- Materials   // character master materials (skin,eye,hologram,)
+	|   |   |-- Effects   // Certains related effects like blood, shields, gibs per character
+        |   |-- OOODrone
+        |   |-- Lucia
+        |-- Core
         |   |-- Characters
-        |   |-- Env
-	|   |-- Props
-	|   |-- Weapons
-	|   |-- Vehicles
-        |   |-- UI
+        |   |-- EngineK
+        |   |-- GameModes
+        |   |-- Interactables
+        |   |-- Grabables
+        |-- Effects
+        |   |-- Industrial	// Typical sci-fi, exhausts, steams, sparks
+        |   |-- Natural		// Godrays, fake lights, fog, dust
+        |   |-- Organic		// character gibs, critter attacks, blood, organic creep
+        |   |-- Water		// Water stuff, generally underwater	
+        |   |-- Interfaces	// UI gameplay stuff, sci-fi interfaces
+        |-- Maps
+        |   |-- 00_ShipOOORecon
+        |   |-- 01_WaterPond
+        |   |   |-- 01_WaterPond_x_sharedassets // contains landscape layer info
+        |   |   |-- HLOD 			// automatic generated hlod meshes
+	|   |-- 95_Shared
+	|   |-- 96_LevelSequences
+	|   |-- 97_Tutorial
+	|   |-- 98_LookDev
+	|   |-- 99_TestMaps
+        |-- MaterialLibrary
+        |   |-- Debug   // DO NOT INCLUDE IN BUILD
+        |   |-- Decals
+        |   |-- ScreenEffects
+        |   |-- Tileables
+	|   |	|   |-- Terrain
+	|   |	|   |-- Rocks
+        |   |-- Utility
+	|   |	|   |-- Functions	// re-useable material functions
+	|   |	|   |-- LightFunctions  
+	|   |	|   |-- IES		// IES light profiles
+	|   |	|   |-- LUTs		// Look up tables for color correction
+	|   |	|   |-- Masks		// general noise and grid textures that can be re-used
+	|   |	|   |-- LookDev		// HDRs 
+        |-- Interactables
+        |   |-- PrintingMachine
+        |   |-- DoorButton
+        |-- Grabables
+        |   |-- HarpoonGun		// can contain mesh, textures, materials, effects
+        |   |-- Pan
+        |   |-- KeyCard
+        |-- UI
+        |   |-- MainMenu
+        |   |-- PlayerMenu
+        |   |-- 
+        |-- Plugins
+        |-- Wwise
+        |-- WwiseAudio        
+	|-- HoudiniEngine
+    |-- Developer // DO NOT INCLUDE IN BUILD
 	
-
  
 </pre>
 
