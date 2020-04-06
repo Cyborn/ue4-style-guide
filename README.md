@@ -386,8 +386,8 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |   |-- Skyboxes
 	|   |-- Space
 	|   |-- Utility		 
-        |   |   |-- ScaleRef
-        |-- ArtTools   // Blueprints to help create art, spline deformers etc...
+        |   |   |-- Blueprints   // Blueprint to help create art, spline deformers etc...
+        |   |   |-- ScaleRef	 //   
         |-- Audio
         |   |-- Ambient		// ambient background sounds
         |   |-- Music		// music tracks
@@ -415,6 +415,8 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |   |-- Characters
         |   |-- EngineK
         |   |-- GameModes
+        |   |-- Interactables
+        |   |-- Grabables
         |-- Effects
         |   |-- Industrial	// Typical sci-fi, exhausts, steams, sparks
         |   |-- Natural		// Godrays, fake lights, fog, dust
@@ -1405,8 +1407,83 @@ void HubrisClass::HubrisFunction(int ThisIsVarA, int ThisIsVarB, bool bIsThisAFu
 ### 8.3 Code Documentation ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 <a name="8.3.1"></a>
+<a name="documentation-generation"></a>
+#### 8.3.1 Comment style for Documentation Generation Tool
+
+Cyborn utilizes a modified version of the <a href="https://github.com/kamrann/KantanDocGenPlugin">Kantan Doc gen tool</a> For automatically creating documentation. We currently keep track of following things:
+
+* UClass
+* UFunctions if BlueprintCallable
+* UMembers (Private | Read | Read/Write)
+
+* Public BP Functions
+* Public BP Variables
+
+<a name="8.3.1.1"></a>
+<a name="documentation-generation-class"></a>
+#### 8.3.1.1 Classes
+
+You can add tags to a class declaration, noting the state of a certain attribute of the class.
+Currently these tags are supported:
+
+**@SaveGame** _Ready | ToDo | None_<br/>
+
+Stating if this class should be saveable or not, and if it is or is not implemented yet.
+
+**@Refactor** _Ready | ToDo_<br/>
+
+Stating if this class is already refactored or still needs a pass.
+
+```cpp
+/**
+ * The main pawn for VR gameplay.
+ * Contains all input handling and main gameplay components for movement and scene interaction.
+ * This pawn should never directly reference any game objects that aren't persistent.
+ * @SaveGame Ready
+ * @Refactor Ready
+**/
+UCLASS(meta = (ShortTooltip = "The main pawn for VR gameplay. Contains all components necessary for world interaction."))
+class HUBRISVR_API ABaseVRPawn : public ABasePawn, public IEMSActorSaveInterface
+```
+
+The  **meta = (ShortTooltip = "")** to the **UCLASS** macro adds a short description that can be read in blueprints and in the index list of the documentation.
+
+<a name="8.3.1.2"></a>
+<a name="documentation-generation-function"></a>
+#### 8.3.1.2 Functions
+
+Functions tagged with BluePrintCallable should include the following function declaration.
+
+```cpp
+/**
+* Function description goes here.
+* You can use multiple lines.
+*
+* @param ParamX Description of parameter ParamX.
+* @param ParamY Description of parameter ParamY.
+* @return Description of function return value.
+*/
+UFUNCTION(BlueprintCallable, ...)
+int32 SomeFunction(FString ParamX, bool ParamY);
+```
+
+Blueprints should properly fill in the description for all the In/Outputs and function description boxes.
+
+<a name="8.3.1.3"></a>
+<a name="documentation-generation-variable"></a>
+#### 8.3.1.3 Member Variables
+
+Accessible class members should describe in a comment what they are and or used for. The tool will scrap the single line comment above the member declaration.
+
+```cpp
+//Keeps track of the ammount of cycles we were asleep
+UPROPERTY(EditANywhere,BLueprintReadWrite,Category="Physics state")
+uint32 SleepCycleCounter;
+```
+
+<a name="8.3.2"></a>
 <a name="documentation-style"></a>
-#### 8.3.1 Comment style
+#### 8.3.2 Comment style
 
 In **class, function or variable declarations**, multiline comments blocks should always follow the Javadoc comment style.<br/>
 Single line comments can use the Javadoc as well as C++ style
@@ -1468,38 +1545,13 @@ TArray<int> MyClass::ExampleFunction(const TArray<int>& IntList)
 	return ValidInts;
 }
 ```
-
-<a name="8.3.2"></a>
+<a name="8.3.3"></a>
 <a name="documentation-members"></a>
-#### 8.3.2 Class Members
+#### 8.3.3 Class Members
 
 Accessible class members should always be properly documented.
 - Document every public class member (= both functions and variables).
 - Document every blueprint-accessible protected or private class member.
-
-<a name="8.3.3"></a>
-<a name="documentation-classdecl"></a>
-#### 8.3.3 Class declaration flags
-
-You can add tags to a class declaration, noting the state of a certain attribute of the class.
-Currently these tags are supported:
-
-**@SaveGame** _Ready | ToDo | None_<br/>
-**@Refactor** _Ready | ToDo_
-
-```cpp
-/**
- * The main pawn for VR gameplay.
- * Contains all input handling and main gameplay components for movement and scene interaction.
- * This pawn should never directly reference any game objects that aren't persistent.
- * @SaveGame Ready
- * @Refactor Ready
-**/
-UCLASS(meta = (ShortTooltip = "The main pawn for VR gameplay. Contains all components necessary for world interaction."))
-class HUBRISVR_API ABaseVRPawn : public ABasePawn, public IEMSActorSaveInterface
-```
-
-Additionally, add **meta = (ShortTooltip = "")** to the **UCLASS** macro to add a short description to show in blueprints instead of the extended one.
 
 ## Contributors
 
