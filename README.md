@@ -386,8 +386,8 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |   |-- Skyboxes
 	|   |-- Space
 	|   |-- Utility		 
-        |   |   |-- Blueprints   // Blueprint to help create art, spline deformers etc...
-        |   |   |-- ScaleRef	 //   
+        |   |   |-- ScaleRef
+        |-- ArtTools   // Blueprints to help create art, spline deformers etc...
         |-- Audio
         |   |-- Ambient		// ambient background sounds
         |   |-- Music		// music tracks
@@ -415,8 +415,6 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |   |-- Characters
         |   |-- EngineK
         |   |-- GameModes
-        |   |-- Interactables
-        |   |-- Grabables
         |-- Effects
         |   |-- Industrial	// Typical sci-fi, exhausts, steams, sparks
         |   |-- Natural		// Godrays, fake lights, fog, dust
