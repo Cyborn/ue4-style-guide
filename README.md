@@ -386,8 +386,8 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |   |-- Skyboxes
 	|   |-- Space
 	|   |-- Utility		 
-        |   |   |-- Blueprints   // Blueprint to help create art, spline deformers etc...
-        |   |   |-- ScaleRef	 //   
+        |   |   |-- ScaleRef
+        |-- ArtTools // Blueprint to help create art, spline deformers etc...
         |-- Audio
         |   |-- Ambient		// ambient background sounds
         |   |-- Music		// music tracks
@@ -1412,12 +1412,14 @@ void HubrisClass::HubrisFunction(int ThisIsVarA, int ThisIsVarB, bool bIsThisAFu
 
 Cyborn utilizes a modified version of the <a href="https://github.com/kamrann/KantanDocGenPlugin">Kantan Doc gen tool</a> For automatically creating documentation. We currently keep track of following things:
 
-* UClass
+Native:
+* UClasses
 * UFunctions if BlueprintCallable
 * UMembers (Private | Read | Read/Write)
 
-* Public BP Functions
-* Public BP Variables
+Blueprinted:
+* Blueprint Functions
+* Blueprint Variables
 
 <a name="8.3.1.1"></a>
 <a name="documentation-generation-class"></a>
@@ -1452,7 +1454,7 @@ The  **meta = (ShortTooltip = "")** to the **UCLASS** macro adds a short descrip
 <a name="documentation-generation-function"></a>
 #### 8.3.1.2 Functions
 
-Functions tagged with BluePrintCallable should include the following function declaration.
+Functions tagged with **BlueprintCallable** should include the following function declaration.
 
 ```cpp
 /**
@@ -1473,11 +1475,11 @@ Blueprints should properly fill in the description for all the In/Outputs and fu
 <a name="documentation-generation-variable"></a>
 #### 8.3.1.3 Member Variables
 
-Accessible class members should describe in a comment what they are and or used for. The tool will scrap the single line comment above the member declaration.
+Accessible class members should describe in a comment what they are used for. The tool will scrap the single line comment above the member declaration.
 
 ```cpp
-//Keeps track of the ammount of cycles we were asleep
-UPROPERTY(EditANywhere,BLueprintReadWrite,Category="Physics state")
+// Keeps track of the ammount of cycles we were asleep
+UPROPERTY(EditAnywhere,BLueprintReadWrite,Category="Physics state")
 uint32 SleepCycleCounter;
 ```
 
