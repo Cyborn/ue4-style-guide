@@ -1458,13 +1458,13 @@ Functions tagged with **BlueprintCallable** should include the following functio
 
 ```cpp
 /**
-* Function description goes here.
-* You can use multiple lines.
-*
-* @param ParamX Description of parameter ParamX.
-* @param ParamY Description of parameter ParamY.
-* @return Description of function return value.
-*/
+ * Function description goes here.
+ * You can use multiple lines.
+ *
+ * @param ParamX Description of parameter ParamX.
+ * @param ParamY Description of parameter ParamY.
+ * @return Description of function return value.
+ */
 UFUNCTION(BlueprintCallable, ...)
 int32 SomeFunction(FString ParamX, bool ParamY);
 ```
