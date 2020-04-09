@@ -374,7 +374,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 
 <pre>
    |-- <a href="#2.2">Content</a>
-        |-- Art                 <font color="grey"><i>Contains all art resulting from the art pipe</i></font>
+        |-- Art                 <i>// Contains all art resulting from the art pipe</i>
         |   |-- Industrial
         |   |   |-- VionTech
 	|   |	|   |-- HG_Cables
@@ -388,14 +388,14 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 	|   |-- Space
 	|   |-- Utility		 
         |   |   |-- ScaleRef
-        |-- ArtTools            <font color="grey"><i>Blueprint to help create art, spline deformers etc...</i></font>
+        |-- ArtTools            <i>// Blueprint to help create art, spline deformers etc...</i>
         |-- Audio
-        |   |-- Ambient		<font color="grey"><i>Ambient background sounds</i></font>
-        |   |-- Music		<font color="grey"><i>Music tracks</i></font>
-        |   |-- Sounds		<font color="grey"><i>Sound that get triggered after an event</i></font>
-        |   |-- Dialogues	<font color="grey"><i>Character audio files seperated per map</i></font>
+        |   |-- Ambient		<i>// Ambient background sounds</i>
+        |   |-- Music		<i>// Music tracks</i>
+        |   |-- Sounds		<i>// Sound that get triggered after an event</i>
+        |   |-- Dialogues	<i>// Character audio files seperated per map</i>
         |   |   |-- Drone	
-	|   |	|   |-- Common  <font color="grey"><i>Reuseable dialogue across multiple maps</i></font>
+	|   |	|   |-- Common  <i>// Reuseable dialogue across multiple maps</i>
 	|   |	|   |-- WaterPond
         |   |   |-- Lucia	
 	|   |	|   |-- Common
@@ -406,10 +406,10 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |-- Characters
         |   |-- Tyrim
         |   |-- Common
-        |   |   |-- Animations  <font color="grey"><i>Shareable animations</i></font>
-        |   |   |-- Audio	<font color="grey"><i>Specific sound for characters (walking, running)</i></font>
-        |   |   |-- Materials   <font color="grey"><i>Character master materials (skin,eye,hologram,)</i></font>
-	|   |   |-- Effects     <font color="grey"><i>Certains related effects like blood, shields, gibs per character</i></font>
+        |   |   |-- Animations  <i>// Shareable animations</i>
+        |   |   |-- Audio	<i>// Specific sound for characters (walking, running)</i>
+        |   |   |-- Materials   <i>// Character master materials (skin,eye,hologram,)</i>
+	|   |   |-- Effects     <i>// Certains related effects like blood, shields, gibs per character</i>
         |   |-- OOODrone
         |   |-- Lucia
         |-- Core
@@ -418,36 +418,36 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |   |-- GameFlow
         |   |-- Main
         |-- Effects
-        |   |-- Industrial	<font color="grey"><i>Typical sci-fi, exhausts, steams, sparks</i></font>
-        |   |-- Natural		<font color="grey"><i>Godrays, fake lights, fog, dust</i></font>
-        |   |-- Organic		<font color="grey"><i>Character gibs, critter attacks, blood, organic creep</i></font>
-        |   |-- Water		<font color="grey"><i>Water stuff, generally underwater</i></font>
-        |   |-- Interfaces	<font color="grey"><i>UI gameplay stuff, sci-fi interfaces</i></font>
+        |   |-- Industrial	<i>// Typical sci-fi, exhausts, steams, sparks</i>
+        |   |-- Natural		<i>// Godrays, fake lights, fog, dust</i>
+        |   |-- Organic		<i>// Character gibs, critter attacks, blood, organic creep</i>
+        |   |-- Water		<i>// Water stuff, generally underwater</i>
+        |   |-- Interfaces	<i>// UI gameplay stuff, sci-fi interfaces</i>
         |-- Maps
         |   |-- 00_ShipOOORecon
         |   |-- 01_WaterPond
-        |   |   |-- 01_WaterPond_x_sharedassets <font color="grey"><i>Contains landscape layer info</i></font>
-        |   |   |-- HLOD 			<font color="grey"><i>Automatic generated hlod meshes</i></font>
+        |   |   |-- 01_WaterPond_x_sharedassets <i>// Contains landscape layer info</i>
+        |   |   |-- HLOD 			<i>// Automatic generated hlod meshes</i>
 	|   |-- 95_Shared
 	|   |-- 96_LevelSequences
 	|   |-- 97_Tutorial
 	|   |-- 98_LookDev
 	|   |-- 99_TestMaps
         |-- MaterialLibrary
-        |   |-- Debug           <font color="grey"><i>DO NOT INCLUDE IN BUILD</i></font>
+        |   |-- Debug           <i>// DO NOT INCLUDE IN BUILD</i>
         |   |-- Decals
         |   |-- ScreenEffects
         |   |-- Tileables
 	|   |	|   |-- Terrain
 	|   |	|   |-- Rocks
         |   |-- Utility
-	|   |	|   |-- Functions	<font color="grey"><i>Re-useable material functions</i></font>
+	|   |	|   |-- Functions	<i>// Re-useable material functions</i>
 	|   |	|   |-- LightFunctions  
-	|   |	|   |-- IES		<font color="grey"><i>IES light profiles</i></font>
-	|   |	|   |-- LUTs		<font color="grey"><i>Look up tables for color correction</i></font>
-	|   |	|   |-- Masks		<font color="grey"><i>General noise and grid textures that can be re-used</i></font>
-	|   |	|   |-- LookDev		<font color="grey"><i>HDRs</i></font>
-        |-- Placeables          <font color="grey"><i>Only Contains Blueprints and blueprint specific other assets.</i></font>
+	|   |	|   |-- IES		<i>// IES light profiles</i>
+	|   |	|   |-- LUTs		<i>// Look up tables for color correction</i>
+	|   |	|   |-- Masks		<i>// General noise and grid textures that can be re-used</i>
+	|   |	|   |-- LookDev		<i>// HDRs</i>
+        |-- Placeables          <i>// Only Contains Blueprints and blueprint specific other assets.</i>
         |   |-- Climbables
         |   |   |-- ClimbingHook
         |   |   |-- RockIsland
@@ -466,7 +466,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |-- Wwise
         |-- WwiseAudio        
 	|-- HoudiniEngine
-    |-- Developer               <font color="grey"><i>DO NOT INCLUDE IN BUILD</i></font>
+    |-- Developer               <i>// DO NOT INCLUDE IN BUILD</i>
 </pre>
 
 The reasons for this structure are listed in the following sub-sections.
