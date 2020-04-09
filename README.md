@@ -1,13 +1,6 @@
 # [Cyborn](https://www.cyborn.be) UE4 Style Guide 
 *A mostly reasonable approach to Unreal Engine 4.* - Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
 
-<style>
-comment {
-        color: gray;
-        font-style: italic;
-}
-</style>
-
 <a name="toc"></a>
 ## Table of Contents
 
@@ -381,7 +374,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 
 <pre>
    |-- <a href="#2.2">Content</a>
-        |-- Art                 <comment>Contains all art resulting from the art pipe</comment>
+        |-- Art                 <i>Contains all art resulting from the art pipe</i>
         |   |-- Industrial
         |   |   |-- VionTech
 	|   |	|   |-- HG_Cables
@@ -395,14 +388,14 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 	|   |-- Space
 	|   |-- Utility		 
         |   |   |-- ScaleRef
-        |-- ArtTools            <comment>Blueprint to help create art, spline deformers etc...</comment>
+        |-- ArtTools            <i>Blueprint to help create art, spline deformers etc...</i>
         |-- Audio
-        |   |-- Ambient		<comment>Ambient background sounds</comment>
-        |   |-- Music		<comment>Music tracks</comment>
-        |   |-- Sounds		<comment>Sound that get triggered after an event</comment>
-        |   |-- Dialogues	<comment>Character audio files seperated per map</comment>
+        |   |-- Ambient		<i>Ambient background sounds</i>
+        |   |-- Music		<i>Music tracks</i>
+        |   |-- Sounds		<i>Sound that get triggered after an event</i>
+        |   |-- Dialogues	<i>Character audio files seperated per map</i>
         |   |   |-- Drone	
-	|   |	|   |-- Common  <comment>Reuseable dialogue across multiple maps</comment>
+	|   |	|   |-- Common  <i>Reuseable dialogue across multiple maps</i>
 	|   |	|   |-- WaterPond
         |   |   |-- Lucia	
 	|   |	|   |-- Common
@@ -413,10 +406,10 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |-- Characters
         |   |-- Tyrim
         |   |-- Common
-        |   |   |-- Animations  <comment>Shareable animations</comment>
-        |   |   |-- Audio	<comment>Specific sound for characters (walking, running)</comment>
-        |   |   |-- Materials   <comment>Character master materials (skin,eye,hologram,)</comment>
-	|   |   |-- Effects     <comment>Certains related effects like blood, shields, gibs per character</comment>
+        |   |   |-- Animations  <i>Shareable animations</i>
+        |   |   |-- Audio	<i>Specific sound for characters (walking, running)</i>
+        |   |   |-- Materials   <i>Character master materials (skin,eye,hologram,)</i>
+	|   |   |-- Effects     <i>Certains related effects like blood, shields, gibs per character</i>
         |   |-- OOODrone
         |   |-- Lucia
         |-- Core
@@ -425,36 +418,36 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |   |-- GameFlow
         |   |-- Main
         |-- Effects
-        |   |-- Industrial	<comment>Typical sci-fi, exhausts, steams, sparks</comment>
-        |   |-- Natural		<comment>Godrays, fake lights, fog, dust</comment>
-        |   |-- Organic		<comment>Character gibs, critter attacks, blood, organic creep</comment>
-        |   |-- Water		<comment>Water stuff, generally underwater</comment>
-        |   |-- Interfaces	<comment>UI gameplay stuff, sci-fi interfaces</comment>
+        |   |-- Industrial	<i>Typical sci-fi, exhausts, steams, sparks</i>
+        |   |-- Natural		<i>Godrays, fake lights, fog, dust</i>
+        |   |-- Organic		<i>Character gibs, critter attacks, blood, organic creep</i>
+        |   |-- Water		<i>Water stuff, generally underwater</i>
+        |   |-- Interfaces	<i>UI gameplay stuff, sci-fi interfaces</i>
         |-- Maps
         |   |-- 00_ShipOOORecon
         |   |-- 01_WaterPond
-        |   |   |-- 01_WaterPond_x_sharedassets <comment>Contains landscape layer info</comment>
-        |   |   |-- HLOD 			<comment>Automatic generated hlod meshes</comment>
+        |   |   |-- 01_WaterPond_x_sharedassets <i>Contains landscape layer info</i>
+        |   |   |-- HLOD 			<i>Automatic generated hlod meshes</i>
 	|   |-- 95_Shared
 	|   |-- 96_LevelSequences
 	|   |-- 97_Tutorial
 	|   |-- 98_LookDev
 	|   |-- 99_TestMaps
         |-- MaterialLibrary
-        |   |-- Debug           <comment>DO NOT INCLUDE IN BUILD</comment>
+        |   |-- Debug           <i>DO NOT INCLUDE IN BUILD</i>
         |   |-- Decals
         |   |-- ScreenEffects
         |   |-- Tileables
 	|   |	|   |-- Terrain
 	|   |	|   |-- Rocks
         |   |-- Utility
-	|   |	|   |-- Functions	<comment>Re-useable material functions</comment>
+	|   |	|   |-- Functions	<i>Re-useable material functions</i>
 	|   |	|   |-- LightFunctions  
-	|   |	|   |-- IES		<comment>IES light profiles</comment>
-	|   |	|   |-- LUTs		<comment>Look up tables for color correction</comment>
-	|   |	|   |-- Masks		<comment>General noise and grid textures that can be re-used</comment>
-	|   |	|   |-- LookDev		<comment>HDRs</comment>
-        |-- Placeables          <comment>Only Contains Blueprints and blueprint specific other assets.</comment>
+	|   |	|   |-- IES		<i>IES light profiles</i>
+	|   |	|   |-- LUTs		<i>Look up tables for color correction</i>
+	|   |	|   |-- Masks		<i>General noise and grid textures that can be re-used</i>
+	|   |	|   |-- LookDev		<i>HDRs</i>
+        |-- Placeables          <i>Only Contains Blueprints and blueprint specific other assets.</i>
         |   |-- Climbables
         |   |   |-- ClimbingHook
         |   |   |-- RockIsland
@@ -473,7 +466,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |-- Wwise
         |-- WwiseAudio        
 	|-- HoudiniEngine
-    |-- Developer               <comment>DO NOT INCLUDE IN BUILD</comment>
+    |-- Developer               <i>DO NOT INCLUDE IN BUILD</i>
 </pre>
 
 The reasons for this structure are listed in the following sub-sections.
