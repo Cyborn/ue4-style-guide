@@ -1,6 +1,13 @@
 # [Cyborn](https://www.cyborn.be) UE4 Style Guide 
 *A mostly reasonable approach to Unreal Engine 4.* - Heavily inspired by the [Airbnb Javascript Style Guide](https://github.com/airbnb/javascript).
 
+<style>
+comment {
+        color: gray;
+        font-style: italic;
+}
+</style>
+
 <a name="toc"></a>
 ## Table of Contents
 
@@ -371,9 +378,10 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 
 <a name="2e1"><a>
 ### 2e1 Example Project Content Structure
+
 <pre>
    |-- <a href="#2.2">Content</a>
-        |-- Art
+        |-- Art                 <comment>//Contains all art resulting from the art pipe</comment>
         |   |-- Industrial
         |   |   |-- VionTech
 	|   |	|   |-- HG_Cables
@@ -387,14 +395,14 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 	|   |-- Space
 	|   |-- Utility		 
         |   |   |-- ScaleRef
-        |-- ArtTools // Blueprint to help create art, spline deformers etc...
+        |-- ArtTools            <comment>// Blueprint to help create art, spline deformers etc...</comment>
         |-- Audio
-        |   |-- Ambient		// ambient background sounds
-        |   |-- Music		// music tracks
-        |   |-- Sounds		// sound that get triggered after an event
-        |   |-- Dialogues	// character audio files seperated per map
+        |   |-- Ambient		<comment>// ambient background sounds</comment>
+        |   |-- Music		<comment>// music tracks</comment>
+        |   |-- Sounds		<comment>// sound that get triggered after an event</comment>
+        |   |-- Dialogues	<comment>// character audio files seperated per map</comment>
         |   |   |-- Drone	
-	|   |	|   |-- Common  // reuseable dialogue across multiple maps
+	|   |	|   |-- Common  <comment>// reuseable dialogue across multiple maps</comment>
 	|   |	|   |-- WaterPond
         |   |   |-- Lucia	
 	|   |	|   |-- Common
@@ -405,55 +413,58 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |-- Characters
         |   |-- Tyrim
         |   |-- Common
-        |   |   |-- Animations  // shareable animations
-        |   |   |-- Audio	// specific sound for characters (walking, running)
-        |   |   |-- Materials   // character master materials (skin,eye,hologram,)
-	|   |   |-- Effects   // Certains related effects like blood, shields, gibs per character
+        |   |   |-- Animations  <comment>// shareable animations</comment>
+        |   |   |-- Audio	<comment>// specific sound for characters (walking, running)</comment>
+        |   |   |-- Materials   <comment>// character master materials (skin,eye,hologram,)</comment>
+	|   |   |-- Effects     <comment>// Certains related effects like blood, shields, gibs per character</comment>
         |   |-- OOODrone
         |   |-- Lucia
         |-- Core
-        |   |-- Characters
-        |   |-- EngineK
-        |   |-- GameModes
-        |   |-- Interactables
-        |   |-- Grabables
+        |   |-- Player
+        |   |-- NPCs
+        |   |-- GameFlow
+        |   |-- Main
         |-- Effects
-        |   |-- Industrial	// Typical sci-fi, exhausts, steams, sparks
-        |   |-- Natural		// Godrays, fake lights, fog, dust
-        |   |-- Organic		// character gibs, critter attacks, blood, organic creep
-        |   |-- Water		// Water stuff, generally underwater	
-        |   |-- Interfaces	// UI gameplay stuff, sci-fi interfaces
+        |   |-- Industrial	<comment>// Typical sci-fi, exhausts, steams, sparks</comment>
+        |   |-- Natural		<comment>// Godrays, fake lights, fog, dust</comment>
+        |   |-- Organic		<comment>// character gibs, critter attacks, blood, organic creep</comment>
+        |   |-- Water		<comment>// Water stuff, generally underwater</comment>
+        |   |-- Interfaces	<comment>// UI gameplay stuff, sci-fi interfaces</comment>
         |-- Maps
         |   |-- 00_ShipOOORecon
         |   |-- 01_WaterPond
-        |   |   |-- 01_WaterPond_x_sharedassets // contains landscape layer info
-        |   |   |-- HLOD 			// automatic generated hlod meshes
+        |   |   |-- 01_WaterPond_x_sharedassets <comment>// contains landscape layer info</comment>
+        |   |   |-- HLOD 			<comment>// automatic generated hlod meshes</comment>
 	|   |-- 95_Shared
 	|   |-- 96_LevelSequences
 	|   |-- 97_Tutorial
 	|   |-- 98_LookDev
 	|   |-- 99_TestMaps
         |-- MaterialLibrary
-        |   |-- Debug   // DO NOT INCLUDE IN BUILD
+        |   |-- Debug           <comment>// DO NOT INCLUDE IN BUILD</comment>
         |   |-- Decals
         |   |-- ScreenEffects
         |   |-- Tileables
 	|   |	|   |-- Terrain
 	|   |	|   |-- Rocks
         |   |-- Utility
-	|   |	|   |-- Functions	// re-useable material functions
+	|   |	|   |-- Functions	<comment>// re-useable material functions</comment>
 	|   |	|   |-- LightFunctions  
-	|   |	|   |-- IES		// IES light profiles
-	|   |	|   |-- LUTs		// Look up tables for color correction
-	|   |	|   |-- Masks		// general noise and grid textures that can be re-used
-	|   |	|   |-- LookDev		// HDRs 
-        |-- Interactables
-        |   |-- PrintingMachine
-        |   |-- DoorButton
-        |-- Grabables
-        |   |-- HarpoonGun		// can contain mesh, textures, materials, effects
-        |   |-- Pan
-        |   |-- KeyCard
+	|   |	|   |-- IES		<comment>// IES light profiles</comment>
+	|   |	|   |-- LUTs		<comment>// Look up tables for color correction</comment>
+	|   |	|   |-- Masks		<comment>// general noise and grid textures that can be re-used</comment>
+	|   |	|   |-- LookDev		<comment>// HDRs</comment>
+        |-- Placeables          <comment>//Only Contains Blueprints and blueprint specific other assets.</comment>
+        |   |-- Climbables
+        |   |   |-- ClimbingHook
+        |   |   |-- RockIsland
+        |   |-- Interactables
+        |   |   |-- PrintingMachine
+        |   |   |-- DoorButton
+        |   |-- Grabables
+        |   |   |-- HarpoonGun
+        |   |   |-- Pan
+        |   |   |-- KeyCard
         |-- UI
         |   |-- MainMenu
         |   |-- PlayerMenu
@@ -462,9 +473,7 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
         |-- Wwise
         |-- WwiseAudio        
 	|-- HoudiniEngine
-    |-- Developer // DO NOT INCLUDE IN BUILD
-	
- 
+    |-- Developer               <comment>// DO NOT INCLUDE IN BUILD</comment>
 </pre>
 
 The reasons for this structure are listed in the following sub-sections.
