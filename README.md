@@ -223,11 +223,11 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 
 | Asset Type                    | Prefix     | Suffix     | Notes                            |
 | ----------------------------- | ---------- | ---------- | -------------------------------- |
-| Material                      | M_         |            |  Used for a single use asset     |
+| Material                      | M_ or MASTER_  |            |  Used for a single use asset     |
 | Material Instance             | MI_        |            |                                  |
 | Master Material               | MASTER_    |            | This is only used for very general shaders that are across multiple assets.                           |
 | Material (Post Process)       | PP_        |            |                                  |
-| Material Function             | MF_        |            |                                  |
+| Material Function             | MF_ or ML_ |            | Use ML_ for material layers      |
 | Material Parameter Collection | MPC_       |            |                                  |
 | Subsurface Profile            | SP_        |            |                                  |
 | Physical Materials            | PM_        |            |                                  |
