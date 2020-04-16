@@ -1407,7 +1407,7 @@ UCLASS(meta = (ShortTooltip = "The main pawn for VR gameplay. Contains all compo
 class HUBRISVR_API ABaseVRPawn : public ABasePawn, public IEMSActorSaveInterface
 ```
 
-The  **meta = (ShortTooltip = "")** to the **UCLASS** macro adds a short description that can be read in blueprints and in the index list of the documentation.
+The  `meta = (ShortTooltip = "")` to the **UCLASS** macro adds a short description that can be read in blueprints and in the index list of the documentation.
 
 <a name="8.3.1.2"></a>
 <a name="documentation-generation-function"></a>
