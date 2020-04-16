@@ -356,6 +356,12 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Niagara Emitter	  | NE_        |            |                                  |
 | Niagara System 	  | NS_        |            |                                  |
 
+<a name="asset-name-unique"></a>
+<a name="1.3"></a>
+### 1.3 Every asset name is unique ![#](https://img.shields.io/badge/lint-supported-green.svg)
+Every asset should have a unique name (including prefixes and suffixes). This means there can be two assets named `BP_Balloon` and `S_Balloon` in the same folder. But there cannot, anywhere in the project, be another asset named `BP_Balloon`.
+
+
 **[⬆ Back to Top](#table-of-contents)**
 
 
