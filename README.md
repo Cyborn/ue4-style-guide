@@ -83,33 +83,33 @@ Keeping the pattern `Prefix_BaseAssetName_Variant_Suffix` and in mind and using 
 
 For unique and specific variations of assets, `Variant` is either a short and easily recognizable name that represents logical grouping of assets that are a subset of an asset's base name. For example, if Bob had multiple skins these skins should still use `Bob` as the `BaseAssetName` but include a recognizable `Variant`. An 'Evil' skin would be referred to as `Bob_Evil` and a 'Retro' skin would be referred to as `Bob_Retro`.
 
-For unique but generic variations of assets, `Variant` is a two digit number starting at `01`. For example, if you have an environment artist generating nondescript rocks, they would be named `Rock_01`, `Rock_02`, `Rock_03`, etc. Except for rare exceptions, you should never require a three digit variant number. If you have more than 100 assets, you should consider organizing them with different base names or using multiple variant names.
+For unique but generic variations of assets, `Variant` is a letter starting at `A`. For example, if you have an environment artist generating nondescript rocks, they would be named `Rock_A`, `Rock_B`, `Rock_C`, etc. Except for rare exceptions, you should never require more letters than the alphabet . If you have more than 26 assets, you should consider organizing them with different base names or using multiple variant names.
 
-Depending on how your asset variants are made, you can chain together variant names. For example, if you are creating flooring assets for an Arch Viz project you should use the base name `Flooring` with chained variants such as `Flooring_Marble_01`, `Flooring_Maple_01`, `Flooring_Tile_Squares_01`.
+Depending on how your asset variants are made, you can chain together variant names. For example, if you are creating flooring assets for an Arch Viz project you should use the base name `Flooring` with chained variants such as `Flooring_Marble_A`, `Flooring_Maple_A`, `Flooring_Tile_Squares_A`.
 
 <a name="1.1-examples"></a>
 <a name="1.1"></a>
 #### 1.1 Examples
 
-##### 1.1e1 Bob
+##### 1.1e1 Tyrim
 
 | Asset Type              | Asset Name                                                 |
 | ----------------------- | ---------------------------------------------------------- |
-| Skeletal Mesh           | SK_Bob                                                     |
-| Material                | M_Bob                                                      |
-| Texture (Diffuse/Albedo)| T_Bob_BaseColor                                            |
-| Texture (Normal)        | T_Bob_Normal                                               |
-| Texture (Evil Diffuse)  | T_Bob_Evil_BaseColor                                       |
+| Skeletal Mesh           | SK_Tyrim                                                     |
+| Material                | M_Tyrim                                                      |
+| Texture (Diffuse/Albedo)| T_Tyrim_BaseColor                                            |
+| Texture (Normal)        | T_Tyrim_Normal                                               |
+| Texture (Evil Diffuse)  | T_Tyrim_Wounded_BaseColor                                       |
 
 ##### 1.1e2 Rocks
 
 | Asset Type              | Asset Name                                                 |
 | ----------------------- | ---------------------------------------------------------- |
-| Static Mesh (01)        | S_Rock_01                                                  |
-| Static Mesh (02)        | S_Rock_02                                                  |
-| Static Mesh (03)        | S_Rock_03                                                  |
-| Material                | M_Rock                                                     |
-| Material Instance (Snow)| MI_Rock_Snow                                               |
+| Static Mesh (01)        | S_RockCliff_A                                                  |
+| Static Mesh (02)        | S_RockCliff_B                                                  |
+| Static Mesh (03)        | S_RockCliff_C                                                  |
+| Material                | M_RockCliff                                                     |
+| Material Instance (Moss)| MI_RockCliff_Moss                                               |
 
 <a name="asset-name-modifiers"></a>
 <a name="1.2"></a>
@@ -150,7 +150,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Level / Map             |            |            | [Should be in a folder called Maps.](#2.4) |
-| Level (Persistent)      |            | _P         |                                  |
+| Level (Persistent)      |            |            |                                  |
 | Level (Audio)           |            | _Audio     |                                  |
 | Level (Lighting)        |            | _Lighting  |                                  |
 | Level (Geometry)        |            | _SetDress  |                                  |
@@ -158,6 +158,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Blueprint               | BP_        |            |                                  |
 | Material                | M_         |            |                                  |
 | Static Mesh             | S_         |            | Many use SM_. We use S_.         |
+| Static Mesh (Collision  | S_         | _Collision | 				       |
 | Skeletal Mesh           | SK_        |            |                                  |
 | Texture                 | T_         | _?         | See [Textures](#anc-textures)    |
 | Particle System         | PS_        |            |                                  |
@@ -223,15 +224,16 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 
 | Asset Type                    | Prefix     | Suffix     | Notes                            |
 | ----------------------------- | ---------- | ---------- | -------------------------------- |
-| Material                      | M_ or MASTER_  |            |  Used for a single use asset     |
+| Material                      | M_         |            |  Used for a single use asset     |
 | Material Instance             | MI_        |            |                                  |
-| Master Material               | MASTER_    |            | This is only used for very general shaders that are across multiple assets.                           |
+| Material (MASTER)             | MASTER_    |            | This is only used for very general shaders that are shared across multiple assets.                           |
 | Material (Post Process)       | PP_        |            |                                  |
+| Material Instance (Post Process) | PPI_    |            |                                  |
 | Material Function             | MF_ or ML_ |            | Use ML_ for material layers      |
 | Material Parameter Collection | MPC_       |            |                                  |
 | Subsurface Profile            | SP_        |            |                                  |
 | Physical Materials            | PM_        |            |                                  |
-| Decal                         | M_, MI_    | _Decal     |                                  |
+| Decal                         | M_, MI_    | _Decal     |  e.g: MI_Splash_A_Decal          |
 
 <a name="anc-textures"></a>
 <a name="1.2.6"></a>
@@ -240,7 +242,7 @@ When naming an asset use these tables to determine the prefix and suffix to use 
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Texture                 | T_         |            |                                  |
-| Texture (Diffuse/Albedo/Base Color)| T_ | _BaseColor      |                                  |
+| Texture (Base Color)    | T_         | _BaseColor      |                                  |
 | Texture (Normal)        | T_         | _Normal         |                                  |
 | Texture (Roughness)     | T_         | _Roughness        |                                  |
 | Texture (Alpha/Opacity) | T_         | _Opacity         |                                  |
@@ -352,14 +354,13 @@ Packing 4 channels of data into a texture (RGBA) is not recommended except for a
 | Asset Type              | Prefix     | Suffix     | Notes                            |
 | ----------------------- | ---------- | ---------- | -------------------------------- |
 | Particle System         | PS_        |            |                                  |
-| Material (Post Process) | PP_        |            |                                  |
 | Niagara Emitter	  | NE_        |            |                                  |
 | Niagara System 	  | NS_        |            |                                  |
 
 <a name="asset-name-unique"></a>
 <a name="1.3"></a>
 ### 1.3 Every asset name is unique ![#](https://img.shields.io/badge/lint-supported-green.svg)
-Every asset should have a unique name (including prefixes and suffixes). This means there can be two assets named `BP_Balloon` and `S_Balloon` in the same folder. But there cannot, anywhere in the project, be another asset named `BP_Balloon`.
+Every asset should have a unique name (including prefixes and suffixes). This means there can be two assets named `BP_HarpoonGun` and `S_HarpoonGun` in the same folder. But there cannot, anywhere in the project, be another asset named `BP_Balloon`.
 
 
 **[⬆ Back to Top](#table-of-contents)**
@@ -380,26 +381,23 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 
 <pre>
    |-- <a href="#2.2">Content</a>
-        |-- Art                 <i>// Contains all art resulting from the art pipe</i>
-        |   |-- Industrial
+        |-- Art                 <i>// Main artist folder</i>
+        |   |-- Guns		<i>// Every object can be considered able to shoot or has a trigger mechanism of some kind</i>
+        |   |   |-- ...
+        |   |-- Industrial	<i>// Walls, pipes, machines, etc seperated per folder</i>
         |   |   |-- VionTech
-	|   |	|   |-- HG_Cables
+	|   |	|   |-- ...
         |   |   |-- OOO 
-	|   |	|   |-- OOO_CryoPod
         |   |   |-- Urom
-        |   |-- Nature
-        |   |   |-- Foliage
-        |   |   |-- Rocks
-        |   |-- Skyboxes
+        |   |-- Nature		<i>// Stuff like rocks and foliage</i>
+        |   |-- Skyboxes	
 	|   |-- Space
-	|   |-- Utility		 
-        |   |   |-- ScaleRef
-        |-- ArtTools            <i>// Blueprint to help create art, spline deformers etc...</i>
+	|   |-- Vehicles
         |-- Audio
         |   |-- Ambient		<i>// Ambient background sounds</i>
         |   |-- Music		<i>// Music tracks</i>
-        |   |-- Sounds		<i>// Sound that get triggered after an event</i>
-        |   |-- Dialogues	<i>// Character audio files seperated per map</i>
+        |   |-- Sounds		<i>// Non looping sounds that are triggerable</i>
+        |   |-- Dialogues	<i>// Character spoken audio</i>
         |   |   |-- Drone	
 	|   |	|   |-- Common  <i>// Reuseable dialogue across multiple maps</i>
 	|   |	|   |-- WaterPond
@@ -410,69 +408,57 @@ There are multiple ways to lay out the content of a UE4 project. In this style, 
 	|   |	|   |-- Common
 	|   |	|   |-- OOOShip				
         |-- Characters
+        |   |-- Common		<i>// Contains shared assets like skin or eye shaders</i>
         |   |-- Tyrim
-        |   |-- Common
-        |   |   |-- Animations  <i>// Shareable animations</i>
-        |   |   |-- Audio	<i>// Specific sound for characters (walking, running)</i>
-        |   |   |-- Materials   <i>// Character master materials (skin,eye,hologram,)</i>
-	|   |   |-- Effects     <i>// Certains related effects like blood, shields, gibs per character</i>
         |   |-- OOODrone
         |   |-- Lucia
-        |-- Core
+        |-- Core		<i>// Game essential blueprints</i>
         |   |-- Player
         |   |-- NPCs
         |   |-- GameFlow
-        |   |-- Main
-        |-- Effects
+        |   |-- ...
+        |-- Effects		<i>// Particle effects or special materials that are triggered in the game or used in environments</i>
         |   |-- Industrial	<i>// Typical sci-fi, exhausts, steams, sparks</i>
+        |   |-- Interfaces	<i>// UI gameplay stuff, sci-fi interfaces</i>
         |   |-- Natural		<i>// Godrays, fake lights, fog, dust</i>
         |   |-- Organic		<i>// Character gibs, critter attacks, blood, organic creep</i>
         |   |-- Water		<i>// Water stuff, generally underwater</i>
-        |   |-- Interfaces	<i>// UI gameplay stuff, sci-fi interfaces</i>
         |-- Maps
         |   |-- 00_ShipOOORecon
         |   |-- 01_WaterPond
-        |   |   |-- 01_WaterPond_x_sharedassets <i>// Contains landscape layer info</i>
+        |   |   |-- 01_WaterPond_sharedassets <i>// Contains landscape layer info, specific level collision meshes </i>
         |   |   |-- HLOD 			<i>// Automatic generated hlod meshes</i>
 	|   |-- 95_Shared
 	|   |-- 96_LevelSequences
 	|   |-- 97_Tutorial
 	|   |-- 98_LookDev
-	|   |-- 99_TestMaps
+	|   |-- 99_Showcase
         |-- MaterialLibrary
-        |   |-- Debug           <i>// DO NOT INCLUDE IN BUILD</i>
-        |   |-- Decals
-        |   |-- ScreenEffects
-        |   |-- Tileables
-	|   |	|   |-- Terrain
-	|   |	|   |-- Rocks
+        |   |-- Decals		<i>// Splashes, oil stains, stickers, normal map details</i>
+        |   |-- Masters		<i>// Contains all assets used for master shaders </i>
+        |   |-- Prototyping   	<i>// Some simple materials that developers and level designers can use </i>
+        |   |-- ScreenEffects   <i>// All postprocess materials </i>
+        |   |-- Tileables	<i>// All tileable materials like metal, plastic </i>
         |   |-- Utility
 	|   |	|   |-- Functions	<i>// Re-useable material functions</i>
-	|   |	|   |-- LightFunctions  
 	|   |	|   |-- IES		<i>// IES light profiles</i>
+	|   |	|   |-- LightFunctions  <i>// Light functions like flickering lights or light cookies</i>
+	|   |	|   |-- LookDev		<i>// HDRs</i>
 	|   |	|   |-- LUTs		<i>// Look up tables for color correction</i>
 	|   |	|   |-- Masks		<i>// General noise and grid textures that can be re-used</i>
-	|   |	|   |-- LookDev		<i>// HDRs</i>
-        |-- Placeables          <i>// Only Contains Blueprints and blueprint specific other assets.</i>
+	|   |	|   |-- Normals		<i>// General normal maps meant for re-use</i>
+        |-- Movies          		<i>// Contains media and media texture data</i>
+        |-- Placeables          <i>// Contains blueprints that inherit from Core and are directly placeable in the game.</i>
         |   |-- Climbables
-        |   |   |-- ClimbingHook
-        |   |   |-- RockIsland
         |   |-- Interactables
-        |   |   |-- PrintingMachine
-        |   |   |-- DoorButton
         |   |-- Grabables
-        |   |   |-- HarpoonGun
-        |   |   |-- Pan
-        |   |   |-- KeyCard
-        |-- UI
-        |   |-- MainMenu
-        |   |-- PlayerMenu
-        |   |-- 
+        |-- Utility		<i>// Contains blueprints and stuff to help artists out with a general range of features</i>
+        |-- UI			<i>// All user interface assets</i>
         |-- Plugins
         |-- Wwise
         |-- WwiseAudio        
 	|-- HoudiniEngine
-    |-- Developer               <i>// DO NOT INCLUDE IN BUILD</i>
+    |-- Developer               <i>// Your own personal sandbox area, do whatever you like here</i>
 </pre>
 
 The reasons for this structure are listed in the following sub-sections.
@@ -1165,13 +1151,13 @@ If Linter is reporting bad UVs and you can't seem to track it down, open the res
 <a name="s-uvs-no-missing"></a>
 #### 4.1.1 All Meshes Must Have UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-Pretty simple. All meshes, regardless how they are to be used, should not be missing UVs.
+Pretty simple. All meshes, regardless how they are to be used, should not be missing UVs. Do a quick auto unwrap just in case.
 
 <a name="4.1.2"></a>
 <a name="s-uvs-no-overlapping"></a>
 #### 4.1.2 All Meshes Must Not Have Overlapping UVs for Lightmaps ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-Pretty simple. All meshes, regardless how they are to be used, should have valid non-overlapping UVs.
+Pretty simple. All meshes, regardless how they are to be used, should have valid non-overlapping UVs. Be sure to set a reasonable 'Min Lightmap Resolution' and 'Light Map Resolution'
 
 <a name="4.2"></a>
 <a name="s-lods"></a>
@@ -1290,7 +1276,8 @@ This section will focus on Texture assets and their internals.
 <a name="textures-dimensions"></a>
 ### 7.1 Dimensions Are Powers of 2 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
-All textures, except for UI textures, must have its dimensions in multiples of powers of 2. Textures do not have to be square. UI textures should have mipmaps disabled if not a power of 2.
+All textures, except for UI textures, must have its dimensions in multiples of powers of 2. Textures do not have to be square. 
+UI textures should have mipmaps disabled if not a power of 2, but try to keep them power of 2 nonetheless. You can always stretch them afterwards in the editor.
 
 For example, `128x512`, `1024x1024`, `2048x1024`, `1024x2048`, `1x512`.
 
@@ -1303,7 +1290,7 @@ Props 5px/cm.
 
 <a name="7.3"></a>
 <a name="textures-max-size"></a>
-### 7.3 Textures Should Be No Bigger than 8192 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
+### 7.3 Textures Should Be No Bigger than 4096 ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
 
 No texture should have a dimension that exceeds 4096 in size, unless you have a very explicit reason to do so. Often, using a texture this big is simply just a waste of resources.
 
