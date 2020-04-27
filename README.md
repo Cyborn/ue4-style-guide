@@ -1188,6 +1188,12 @@ Concretely, every mesh should hold simple collision data. If necessary, this can
 
 This is a subjective check on a per-project basis, however all assets should be scaled correctly to their project. Level designers or blueprint authors should not have to tweak the scale of meshes to get them to confirm in the editor. Scaling meshes in the engine should be treated as a scale override, not a scale correction.
 
+<a name="4.6"></a>
+<a name="s-scaled"></a>
+### 4.6 All Meshes Should Not Have Duplicate Material Slots ![#](https://img.shields.io/badge/lint-supported-green.svg)
+
+If a mesh has multiple material slots, each one should be unique and there should be no duplicate ones sharing the same material.
+
 **[⬆ Back to Top](#table-of-contents)**
 
 
