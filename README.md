@@ -1141,7 +1141,9 @@ This section will focus on Static Mesh assets and their internals.
 
 > 4.5 [Correct Scale](#s-scaled)
 
-> 4.6 [Material Slot](#s-mslot)
+> 4.6 [Unique Material Slot](#s-mslot-unique)
+
+> 4.7 [Non-Empty Material Slot](#s-mslot-filled)
 
 <a name="4.1"></a>
 <a name="s-uvs"></a>
@@ -1191,10 +1193,16 @@ Concretely, every mesh should hold simple collision data. If necessary, this can
 This is a subjective check on a per-project basis, however all assets should be scaled correctly to their project. Level designers or blueprint authors should not have to tweak the scale of meshes to get them to confirm in the editor. Scaling meshes in the engine should be treated as a scale override, not a scale correction.
 
 <a name="4.6"></a>
-<a name="s-mslot"></a>
+<a name="s-mslot-unique"></a>
 ### 4.6 All Meshes Should Not Have Duplicate Material Slots ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 If a mesh has multiple material slots, each one should be unique and there should be no duplicate ones sharing the same material.
+
+<a name="4.7"></a>
+<a name="s-mslot-filled"></a>
+### 4.7 All Meshes Should Not Have Empty Material Slots ![#](https://img.shields.io/badge/lint-supported-green.svg)
+
+Each materialslot on a mesh should have a material assigned. The default WorldGridMaterial does not count as a valid material in this case.
 
 **[⬆ Back to Top](#table-of-contents)**
 
