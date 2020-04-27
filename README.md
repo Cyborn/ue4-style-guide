@@ -1141,6 +1141,8 @@ This section will focus on Static Mesh assets and their internals.
 
 > 4.5 [Correct Scale](#s-scaled)
 
+> 4.6 [Material Slot](#s-mslot)
+
 <a name="4.1"></a>
 <a name="s-uvs"></a>
 ### 4.1 Static Mesh UVs ![#](https://img.shields.io/badge/lint-supported-green.svg)
@@ -1189,7 +1191,7 @@ Concretely, every mesh should hold simple collision data. If necessary, this can
 This is a subjective check on a per-project basis, however all assets should be scaled correctly to their project. Level designers or blueprint authors should not have to tweak the scale of meshes to get them to confirm in the editor. Scaling meshes in the engine should be treated as a scale override, not a scale correction.
 
 <a name="4.6"></a>
-<a name="s-scaled"></a>
+<a name="s-mslot"></a>
 ### 4.6 All Meshes Should Not Have Duplicate Material Slots ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
 If a mesh has multiple material slots, each one should be unique and there should be no duplicate ones sharing the same material.
