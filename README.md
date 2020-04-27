@@ -1141,9 +1141,7 @@ This section will focus on Static Mesh assets and their internals.
 
 > 4.5 [Correct Scale](#s-scaled)
 
-> 4.6 [Unique Material Slot](#s-mslot-unique)
-
-> 4.7 [Non-Empty Material Slot](#s-mslot-filled)
+> 4.6 [Valid & Unique Material Slot](#s-mslot-unique)
 
 <a name="4.1"></a>
 <a name="s-uvs"></a>
@@ -1194,15 +1192,10 @@ This is a subjective check on a per-project basis, however all assets should be 
 
 <a name="4.6"></a>
 <a name="s-mslot-unique"></a>
-### 4.6 All Meshes Should Not Have Duplicate Material Slots ![#](https://img.shields.io/badge/lint-supported-green.svg)
+### 4.6 All Meshes Should Have Valid And Unique Material Slots ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-If a mesh has multiple material slots, each one should be unique and there should be no duplicate ones sharing the same material.
-
-<a name="4.7"></a>
-<a name="s-mslot-filled"></a>
-### 4.7 All Meshes Should Not Have Empty Material Slots ![#](https://img.shields.io/badge/lint-supported-green.svg)
-
-Each materialslot on a mesh should have a material assigned. The default WorldGridMaterial does not count as a valid material in this case.
+If a mesh has multiple material slots, each one should be valid and unique. This means that each slot should have a material assigned and that this material should not be assigned to any other slot on the same mesh.</br>
+The default **WorldGridMaterial not count** as a valid material in this case.
 
 **[⬆ Back to Top](#table-of-contents)**
 
