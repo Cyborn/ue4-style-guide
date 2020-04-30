@@ -843,7 +843,8 @@ Every component of a class goes here automatically.</br>
 Usually, variables are never manually assigned to this category.
 2. **`Config`**</br>
 All variables defining the behaviour of a class go here.</br>
-All variables in this category must be `public`.
+All variables in this category must be `public`.</br>
+All `Editable` variables go in this category.
 3. **`Internal`**</br>
 All variables used for internal logic of a class go here.</br>
 This category is treated as `protected` or `private`, thus it cannot contain `Editable` variables. Every `public` variable in this category shuld be seen as a `protected` variable.</br>
