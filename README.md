@@ -815,6 +815,8 @@ Do not arbitrarily mark variables as `Editable`.
 <a name="bp-vars-editable-tooltips"></a>
 ##### 3.2.2.1 Tooltips ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
+All `public` variables should have a description in their `Tooltip` fields that explains how changing this value affects the behavior of the blueprint.
+
 All `Editable` variables, including those marked editable just so they can be marked as `Expose On Spawn`, should have a description in their `Tooltip` fields that explains how changing this value affects the behavior of the blueprint.
 
 <a name="3.2.2.2"></a>
