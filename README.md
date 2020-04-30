@@ -833,25 +833,41 @@ A Value Range only needs to be defined if the bounds of a value are known. While
 <a name="bp-vars-categories"></a>
 #### 3.2.3 Categories ![#](https://img.shields.io/badge/lint-supported-green.svg)
 
-If a class has only a small number of variables, categories are not required.
+Every variabele in a blueprint should be part of a category.
+We allow only these root categories:
 
-If a class has a moderate amount of variables (5-10), all `Editable` variables should have a non-default category assigned. A common category is `Config`.
+1. **`Components`**</br>
+Every component of a class goes here automatically.</br>
+Usually, variables are never manually assigned to this category.
+2. **`Config`**</br>
+All variables defining the behaviour of a class go here.</br>
+All variables in this category must be `public`.
+3. **`Internal`**</br>
+All variables used for internal logic of a class go here.</br>
+This category is treated as `protected` or `private`, thus it cannot contain `Editable` variables. Every `public` variable in this category shuld be seen as a `protected` variable.</br>
+This is the only category that can contain `private` variables.
+4. **`Status`**</br>
+All variables noting a publically understandable state of the current class go here.</br>
+All variables in this category must be `public`.</br>
+This category contains variables such as **bActive** or **CurrentWorldSpeed**. This category should **not contain** variables marking an internal status that have no meaning outside the functions they are used in are make no clear statement about the object as a whole.
 
-If a class has a large amount of variables, all `Editable` variables should be categorized into sub-categories using the category `Config` as the base category. Non-editable variables should be categorized into descriptive categories describing their usage. 
+The default category not allowed.
+
+If a class has a large amount of variables, variables can be categorized into sub-categories using the root category as the base category.
 
 > You can define sub-categories by using the pipe character `|`, i.e. `Config | Animations`.
 
 Example: A weapon class set of variables might be organized as:
 
+	|-- Components
 	|-- Config
 	|	|-- Animations
 	|	|-- Effects
-	|	|-- Audio
-	|	|-- Recoil
+	|-- Internal
 	|	|-- Timings
-	|-- Animations
-	|-- State
-	|-- Visuals
+	|-- Status
+	|	|-- Animations
+	|	|-- Effects
 
 <a name="3.2.4"></a>
 <a name="bp-vars-access"></a>
@@ -861,7 +877,7 @@ In C++, variables have a concept of access level. Public means any code outside 
 
 Blueprints do not have a defined concept of protected access currently.
 
-Treat `Editable` variables as public variables. Treat non-editable variables as protected variables.
+Treat the `Internal` category as protected. Every variabele that would be protected in C++ should be in the `Internal` category.
 
 <a name="3.2.4.1"></a>
 <a name="bp-vars-access-private"></a>
