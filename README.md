@@ -858,7 +858,7 @@ The default category not allowed.
 
 If a class has a large amount of variables, variables can be categorized into sub-categories using the root category as the base category.
 
-> You can define sub-categories by using the pipe character `|`, i.e. `Config | Animations`.
+> You can define sub-categories by using the pipe character `|` without spaces, i.e. `Config|Animations`.
 
 Example: A weapon class set of variables might be organized as:
 
