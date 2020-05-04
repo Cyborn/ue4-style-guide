@@ -844,7 +844,6 @@ Usually, variables are never manually assigned to this category.
 2. **`Config`**</br>
 All variables defining the behaviour of a class go here.</br>
 All variables in this category must be `public`.</br>
-All `Editable` variables go in this category.
 3. **`Internal`**</br>
 All variables used for internal logic of a class go here.</br>
 This category is treated as `protected` or `private`, thus it cannot contain `Editable` variables. Every `public` variable in this category shuld be seen as a `protected` variable.</br>
@@ -852,6 +851,7 @@ This is the only category that can contain `private` variables.
 4. **`Status`**</br>
 All variables noting a publically understandable state of the current class go here.</br>
 All variables in this category must be `public`.</br>
+`Editable` variables in this category can be used to let the user set an initial state on instances. (These variables should still update to the current state when playing).</br>
 This category contains variables such as **bActive** or **CurrentWorldSpeed**. This category should **not contain** variables marking an internal status that have no meaning outside the functions they are used in are make no clear statement about the object as a whole.
 
 The default category not allowed.
