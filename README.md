@@ -847,6 +847,7 @@ All variables in this category must be `public`.</br>
 3. **`Internal`**</br>
 All variables used for internal logic of a class go here.</br>
 This category is treated as `protected` or `private`, thus it cannot contain `Editable` variables. Every `public` variable in this category shuld be seen as a `protected` variable.</br>
+If multiple blueprints are heavily entangled, you can treat them as **friend-classes**. They can use each others internal variables. Those variables shouldn't be in `Status` or `Config` since they are meaningless for extern classes.</br>
 This is the only category that can contain `private` variables.
 4. **`Status`**</br>
 All variables noting a publically understandable state of the current class go here.</br>
