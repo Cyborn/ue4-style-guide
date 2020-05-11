@@ -855,7 +855,7 @@ All variables in this category must be `public`.</br>
 `Editable` variables in this category can be used to let the user set an initial state on instances. (These variables should still update to the current state when playing).</br>
 This category contains variables such as **bActive** or **CurrentWorldSpeed**. This category should **not contain** variables marking an internal status that have no meaning outside the functions they are used in are make no clear statement about the object as a whole.
 
-The default category not allowed.
+The default category is not allowed.
 
 If a class has a large amount of variables, variables can be categorized into sub-categories using the root category as the base category.
 
