@@ -1253,12 +1253,6 @@ This section will focus on Level assets and their internals.
 
 > 6.1 [No Errors Or Warnings](#levels-no-errors-or-warnings)
 
-> 6.2 [Lighting Should Be Built](#levels-lighting-should-be-built)
-
-> 6.3 [No Player Visible Z Fighting](#evels-no-visible-z-fighting)
-
-> 6.4 [Marketplace Specific Rules](#evels-levels-mp-rules)
-
 <a name="6.1"></a>
 <a name="levels-no-errors-or-warnings"></a>
 ### 6.1 No Errors Or Warnings ![#](https://img.shields.io/badge/lint-partial_support-yellow.svg)
@@ -1268,19 +1262,6 @@ All levels should load with zero errors or warnings. If a level loads with any e
 You can run a map check on an open level in the editor by using the console command "map check".
 
 Please note: Linter is even more strict on this than the editor is currently, and will catch load errors that the editor will resolve on its own.
-
-<a name="6.2"></a>
-<a name="levels-lighting-should-be-built"></a>
-### 6.2 Lighting Should Be Built ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
-
-It is normal during development for levels to occasionally not have lighting built. When doing a test/internal/shipping build or any build that is to be distributed however, lighting should always be built.
-
-<a name="6.3"></a>
-<a name="levels-no-visible-z-fighting"></a>
-### 6.3 No Player Visible Z Fighting ![#](https://img.shields.io/badge/lint-unsupported-red.svg)
-
-Levels should not have any [z-fighting](https://en.wikipedia.org/wiki/Z-fighting) in all areas visible to the player. 
-
 
 **[⬆ Back to Top](#table-of-contents)**
 
